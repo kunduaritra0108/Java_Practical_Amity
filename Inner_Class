@@ -1,0 +1,23 @@
+//WAJP to demonstrate inner class
+import java.util.Scanner;
+class Outer {
+    int num;
+    class Inner {
+        void getData() {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter a number: ");
+            num = sc.nextInt();
+        }
+        void display() {
+            System.out.println("You entered: " + num);
+        }
+    }
+}
+public class Inner_Class {
+    public static void main(String[] args) {
+        Outer outerObj = new Outer();
+        Outer.Inner innerObj = outerObj.new Inner();
+        innerObj.getData();
+        innerObj.display();
+    }
+}
