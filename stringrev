@@ -1,0 +1,15 @@
+import java.util.Scanner;
+class WordRev{
+    public static void main(String [] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String input = scanner.nextLine();
+        String[] words = input.split(" ");
+        String rev = "";
+        for(int i = words.length - 1; i>=0;i--){
+            rev += words[i] +(i==0?"": " ");
+        }
+        System.out.println("Reversed: " + rev);
+        scanner.close();
+    }
+}
