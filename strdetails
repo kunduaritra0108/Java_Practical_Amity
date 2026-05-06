@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class StringState{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String input = sc.nextLine();
+        int upperCount = 0;
+        int lowerCount = 0;
+        int digitCount = 0;
+        int spaceCount = 0;
+        for(int i=0;i<input.length();i++){
+            char ch = input.charAt(i);
+            if(Character.isUpperCase(ch)){upperCount++;}
+            if(Character.isLowerCase(ch)){lowerCount++;}
+            if(Character.isDigit(ch)){digitCount++;}
+            if(Character.isWhitespace(ch)){spaceCount++;}
+        }
+        System.out.println("String Statistics\nUppercase: " + upperCount + "\nLowercase: " + lowerCount + "\nDigits: " + digitCount + "\nSpaces: " + spaceCount);
+        sc.close();
+    }
+}
