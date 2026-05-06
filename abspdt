@@ -1,0 +1,99 @@
+abstract class Abstractproduct {
+    String pid;
+    String pname;
+    String pdesc;
+    Abstractproduct(String n, String id, String d){
+        this.pid=id;
+        this.pname=n;
+        this.pdesc=d;
+    }
+    void display(){
+        System.out.println("Product ID: " + pid);
+        System.out.println("Product Name: " + pname);
+        System.out.println("Product Description: " + pdesc);
+        System.out.println("--------------------------------------------------------");
+    }
+}
+class Product extends Abstractproduct{
+    double price;
+    Product(String n, String id, String d, double p){
+        super(n,id,d);
+        this.price=p;
+    }
+    void display(){
+        System.out.println("Product ID: " + pid);
+        System.out.println("Product Name: " + pname);
+        System.out.println("Product Description: " + pdesc);
+        System.out.println("Price: " + price);
+        System.out.println("--------------------------------------------------------");
+    }
+
+}
+
+class Book extends Product{
+    String isbn;
+    String author;
+    String title;
+    Book(String n, String id, String d, double p, String i,String a, String t){
+        super(n,id,d,p);
+        this.isbn=i;
+        this.author=a;
+        this.title=t;
+    }
+    void display(){
+        System.out.println("Product ID: " + pid);
+        System.out.println("Product Name: " + pname);
+        System.out.println("Product Description: " + pdesc);
+        System.out.println("Price: " + price);
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("--------------------------------------------------------");
+    }
+}
+class CompactDisc extends Product{
+    String artist;
+    String title;
+    CompactDisc(String n, String id, String d, double p, String a, String t){
+        super(n,id,d,p);
+        this.artist=a;
+        this.title=t;
+    }
+    void display(){
+        System.out.println("Product ID: " + pid);
+        System.out.println("Product Name: " + pname);
+        System.out.println("Product Description: " + pdesc);
+        System.out.println("Price: " + price);
+        System.out.println("Title: " + title);
+        System.out.println("Artist: " + artist);
+        System.out.println("--------------------------------------------------------");
+    }
+}
+class TravelGuide extends Book{
+    String country;
+    TravelGuide(String n, String id, String d, double p, String i,String a, String t,String c){
+        super(n,id,d,p,i,a,t);
+        this.country=c;
+
+    }
+    void display(){
+        System.out.println("Product ID: " + pid);
+        System.out.println("Product Name: " + pname);
+        System.out.println("Product Description: " + pdesc);
+        System.out.println("Price: " + price);
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Country: " + country);
+        System.out.println("--------------------------------------------------------");
+    }
+}
+
+class Main2{
+    public static void main(String[] args){
+        TravelGuide t = new TravelGuide("TRAVELING 101", "ABC123", "Book About Traveling", 599, "PWQYt", "XYZ", null, "India");
+        t.display();
+        CompactDisc cd = new CompactDisc("pxyya", "234567", "it is a cd", 499, "Anu Mullick","ABABBABABA");
+        cd.display();
+    }
+}
